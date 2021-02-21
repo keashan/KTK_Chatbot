@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KTK Chat Bot</title>
+    <style type="text/css">
+        .flex-container {
+            display: flex;
+            background-color: rgb(197, 202, 204);
+        }
+        .container {
+            background-color: #99CCFF;
+            border: thick solid #808080;
+            padding: 20px;
+            margin: 20px;
+            width:50%;
+            bottom:0
+        }
+        .description {
+            background-color: #99CCFF;
+            border: thick solid #808080;
+            padding: 20px;
+            margin: 20px;
+            width:50%;
+            bottom:0
+        }
+        .test {
+            position: relative;
+            bottom:0
+        }
+        .user {
+            background-color: lightblue;
+            text-align: left;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .bot {
+            background-color: lightgoldenrodyellow;
+            text-align: right;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .inputarea {
+            text-align: right;
+            height: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="container">
+            <div id="discussion" class="discussion"></div>
+            <div class="inputarea">
+                <input type="text" id="message" name="message" />
+                <input type="button" id="sendmessage" value="Send" onClick="chatWithServer()"/>
+            </div>
+        </div>
+        <div class="description">
+            <div class="test">
+                <h1>KTK Chat Bot</h1>
+                <p>This chat bot is developed by Keashan Jayaweera to demonstrait <strong>Intent</strong> 
+                    based chatbot functionality. You could ask what are the services provitded by <strong>
+                    Keashan</strong> and more details about it.</p>
+            </div>
+        </div>
+    </div>
+    <script language="JavaScript" type="text/javascript" src="{{url_for('static',filename='jquery-3.5.1.js')}}"></script>
+    
+    <script>
+        function chatWithServer(){
+            $('#discussion').append('<div class="usern"><strong>' + 'You:'
+                    + '</strong></div><div class="user">' + $("#message").val() + '</div><br>');
+            var msg={
+                sentence:$("#message").val()
+            }
+            var recursiveEncoded = $.param( msg );
+            console.log('http://localhost:5000/chat?' + recursiveEncoded);
+            $.ajax({
+                type:'POST',
+                url:'http://localhost:5000/chat?' + recursiveEncoded,
+                
+            }).done( function(data){$('#discussion').append('<div class=botn><strong>' + 'KTK Bot:'
+                    + '</strong></div><div class=bot>' + data.KTK_Bot + '</div><br>'); $('#message').val('').focus();
+            })
+        }
+        
+        
+
+    </script>
+</body>
+</html>

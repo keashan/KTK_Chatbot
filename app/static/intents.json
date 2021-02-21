@@ -1,0 +1,150 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "services",
+      "patterns": [
+        "Which services do you offer?",
+        "What kinds of services are there?",
+        "What do you offer?"
+      ],
+      "responses": [
+        "We offer excel and python related services",
+        "We build excel macros or python scripts for you"
+      ]
+    },
+    {
+      "tag": "web scraping",
+      "patterns": [
+        "Can I have web scraping service?",
+        "Do you build web scrapers?",
+        "I would like to extract data from a website."
+      ],
+      "responses":[
+        "Yes, we build web scrapers",
+        "We build web scrapers using both python and excel vba."
+      ]
+    },
+    {
+      "tag":"Dashboard",
+      "patterns":[
+        "Are you build Dashboards?",
+        "Are you develop Dashboards?",
+        "I would like to build a Dashboard"
+      ],
+      "responses":[
+        "Yes, we build Dashboards",
+        "We build Dashboards using both python and excel vba."
+      ]
+    },
+    {
+      "tag":"excel",
+      "patterns":[
+        "Can you create an excel file?",
+        "Are you create excel tools?",
+        "Do you build an Excel tool for my business?"
+      ],
+      "responses":[
+        "Yes, we build Excel tools",
+        "We build Excel tools to suit your requirements.",
+		    "We can automate most of your tasks on excel"
+      ]
+    },
+	  {
+      "tag":"python",
+      "patterns":[
+        "Can I have a Python script build?",
+        "Are you develop python scripts?",
+        "I would like to build a python script"
+      ],
+      "responses":[
+        "Yes, we build python scripts",
+        "We build python scripts to manipulate your data."
+      ]
+    },
+    {
+      "tag":"macro",
+      "patterns":[
+        "Can I have a macro build?",
+        "Are you develop excel macro?",
+        "I would like to build a macro"
+      ],
+      "responses":[
+        "Yes, we build excel macro",
+        "We build excel macro to automate your day to day tasks.",
+		"We develop simple excel tool to comolex excel systems using macro."
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal"
+      ]
+    },
+    {
+      "tag": "delivery",
+      "patterns": [
+        "How long does delivery take?",
+        "How long does developing take?",
+        "When do I get my script?",
+        "When do I get my macro?"
+      ],
+      "responses": [
+        "It depends with the requirement.",
+        "Most of the tools/scripts we built took few days.",
+        "If your requirement is not complicated, we can complete within few days."
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": [
+        "How could I contact you?",
+        "What is your email?",
+        "Can I have your email?",
+        "How should I send my requirements?"
+      ],
+      "responses": [
+        "My email is support@ktktools.net.",
+        "You can contact me using support@ktktools.net.",
+        "support@ktktools.net is my email"
+      ]
+    }
+  ]
+}
