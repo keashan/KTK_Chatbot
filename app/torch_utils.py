@@ -1,8 +1,8 @@
 import random
 import json
 import torch
-from .model import NuralNet
-from .nltk_utils import  bag_of_words, tokenize
+from model import NuralNet
+from nltk_utils import  bag_of_words, tokenize
 
 #device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
