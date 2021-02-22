@@ -1,12 +1,13 @@
 from flask import Flask,request,jsonify,render_template
 from flask_cors import CORS
 from  torch_utils import chat_response
+from model import NuralNet
 
 
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/chat',methods=['POST', 'GET'])
+@app.route('/chat',methods=['POST'])
 def chat():
     if request.method=='POST':
         sentence=request.args.get('sentence')
