@@ -1,7 +1,7 @@
 from flask import Flask,request,jsonify,render_template
 from flask_cors import CORS
-from  torch_utils import chat_response
-from model import NuralNet
+from  .torch_utils import chat_response
+from .model import NuralNet
 
 
 app = Flask(__name__)

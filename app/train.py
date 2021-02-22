@@ -6,8 +6,8 @@ import torch
 import torch.nn as nn
 from torch.utils.data import  Dataset, DataLoader
 
-from nltk_utils import tokenize, bag_of_words, stem
-from model import NuralNet
+from .nltk_utils import tokenize, bag_of_words, stem
+from .model import NuralNet
 
 
 with open('static/intents.json','r') as f:
