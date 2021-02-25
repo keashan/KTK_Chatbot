@@ -1,15 +1,15 @@
 import random
 import json
 import torch
-from model import  NuralNet
+from model import NuralNet
 from nltk_utils import  bag_of_words, tokenize
 
-device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+#device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('static/intents.json','r') as f:
+with open('intents.json','r') as f:
     intents=json.load(f)
 
-FILE='static/data.pth'
+FILE='data.pth'
 data=torch.load(FILE)
 
 input_size=data['input_size']
@@ -19,16 +19,12 @@ all_words=data['all_words']
 tags=data['tags']
 model_state=data['model_state']
 
-model=NuralNet(input_size,hidden_size,output_size).to(device)
+model=NuralNet(input_size,hidden_size,output_size)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name='KTK Bot'
-print("Let's chat! type 'quit' to exit")
-while  True:
-    sentence=input('You: ')
-    if sentence=='quit':
-        break
+
+def chat_response(sentence):
     
     sentence=tokenize(sentence)
     X=bag_of_words(sentence,all_words)
@@ -44,11 +40,11 @@ while  True:
     if prob.item()>0.90:
         for intent in intents['intents']:
             if tag==intent['tag']:
-                print(f"{bot_name}: {random.choice(intent['responses'])}")
+                return random.choice(intent['responses'])
     elif prob.item()>0.80:
         for intent in intents['intents']:
             if tag==intent['tag']:
-                print(f"{bot_name}: Please ask something similar to {random.choice(intent['patterns'])}")
+                return "Please ask something similar to f{random.choice(intent['patterns'])}"
     else:
-        print(f"{bot_name}: I'm sorry, this is beyoned my knowledge. Please send an email to support@ ktktools.net.\ntype 'quit' to exit")
-
+        #return sentence
+        return "I'm sorry, this is beyoned my knowledge. Please send an email to support@ ktktools.net."
