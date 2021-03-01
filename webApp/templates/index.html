@@ -5,44 +5,58 @@
     <style type="text/css">
         .flex-container {
             display: flex;
-            background-color: rgb(197, 202, 204);
+            background-color: #1F2833;
         }
         .container {
-            background-color: #99CCFF;
-            border: thick solid #808080;
+            background-color: #45A29E;
+            border: thick solid #f2f3f7;
             padding: 20px;
             margin: 20px;
             width:50%;
-            bottom:0
+            bottom:0;
+            border-radius: 20px
         }
         .description {
-            background-color: #99CCFF;
-            border: thick solid #808080;
+            background-color: #45A29E;
+            border: thick solid #f2f3f7;
             padding: 20px;
             margin: 20px;
             width:50%;
-            bottom:0
+            bottom:0;
+            border-radius: 20px
         }
         .test {
             position: relative;
             bottom:0
         }
         .user {
-            background-color: lightblue;
+            background-color: #66FCF1;
             text-align: left;
             padding: 10px;
             border-radius: 10px;
         }
         .bot {
-            background-color: lightgoldenrodyellow;
+            background-color: #C5C6C7;
             text-align: right;
             padding: 10px;
             border-radius: 10px;
         }
-        .inputarea {
+        .sendmessage {
+            background-color: #1F2833; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        .message {
             text-align: right;
-            height: 20px;
-            padding: 10px;
+            height: 25px;
+            padding: 3px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -51,8 +65,8 @@
         <div class="container">
             <div id="discussion" class="discussion"></div>
             <div class="inputarea">
-                <input type="text" id="message" name="message" />
-                <input type="button" id="sendmessage" value="Send" onClick="chatWithServer()"/>
+                <input type="text" id="message" name="message" class="message" />
+                <input type="button" id="sendmessage" value="Send" onClick="chatWithServer()" class="sendmessage"/>
             </div>
         </div>
         <div class="description">

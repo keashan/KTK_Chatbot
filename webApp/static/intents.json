@@ -28,12 +28,24 @@
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
-      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      "patterns": [
+        "Thanks",
+        "Thank you", 
+        "That's helpful", 
+        "Thank's a lot!",
+        "Great"
+      ],
+      "responses": [
+        "Happy to help!",
+        "Any time!", 
+        "My pleasure"
+      ]
     },
     {
       "tag": "services",
       "patterns": [
+        "Please tell me your scope?",
+        "Can you tell me what you can do?",
         "Which services do you offer?",
         "What kinds of services are there?",
         "What do you offer?"
@@ -102,7 +114,7 @@
       "responses":[
         "Yes, we build excel macro",
         "We build excel macro to automate your day to day tasks.",
-		"We develop simple excel tool to comolex excel systems using macro."
+		"We develop simple excel tool to complex excel systems using macro."
       ]
     },
     {
