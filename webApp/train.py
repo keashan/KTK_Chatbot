@@ -9,6 +9,8 @@ from torch.utils.data import  Dataset, DataLoader
 from nltk_utils import tokenize, bag_of_words, stem
 from model import NuralNet
 
+import nltk
+nltk.download('punkt')
 
 with open('static/intents.json','r') as f:
     intents=json.load(f)
